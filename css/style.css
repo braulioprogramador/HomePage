@@ -1,0 +1,477 @@
+/*RESET*/
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: arial, "Times New Roman", Times, serif;
+  }
+  /*RESET FIM*/
+  /*GRID*/
+  
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  .container::after,
+  .container::before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .grid-1,
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .grid-5,
+  .grid-6,
+  .grid-7,
+  .grid-8,
+  .grid-9,
+  .grid-10,
+  .grid-11,
+  .grid-12,
+  .grid-mobile-4 {
+    margin-left: 10px;
+    margin-right: 10px;
+    float: left;
+    display: block;
+    min-height: 1px;
+  }
+  
+  .grid-1 {
+    width: calc(8.333% - 20px);
+  }
+  .grid-2 {
+    width: calc(16.666% - 20px);
+  }
+  .grid-3 {
+    width: calc(25% - 20px);
+  }
+  .grid-4 {
+    width: calc(33.333% - 20px);
+  }
+  .grid-5 {
+    width: calc(41.666% - 20px);
+  }
+  .grid-6 {
+    width: calc(50% - 20px);
+  }
+  .grid-7 {
+    width: calc(58.333% - 20px);
+  }
+  .grid-8 {
+    width: calc(66.666% - 20px);
+  }
+  .grid-9 {
+    width: calc(75% - 20px);
+  }
+  .grid-10 {
+    width: calc(83.333% - 20px);
+  }
+  .grid-11 {
+    width: calc(91.666% - 20px);
+  }
+  .grid-12 {
+    width: calc(100% - 20px);
+  }
+  .grid-mobile-4 {
+    width: calc(33.333% - 20px);
+  }
+  .row {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  .row::after,
+  .row::before,
+  .row-mobile-::after,
+  .row-mobile::before {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  @media (max-width: 739px) {
+    .container {
+      max-width: 300px;
+    }
+    .grid-1,
+    .grid-2,
+    .grid-3,
+    .grid-4,
+    .grid-5,
+    .grid-6,
+    .grid-7,
+    .grid-8,
+    .grid-9,
+    .grid-10,
+    .grid-11,
+    .grid-12 {
+      width: 100%;
+      margin-left: 0px;
+      margin-right: 0px;
+      float: none;
+    }
+    .row {
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  }
+  /*GRID FIM*/
+  
+  /*ESTILOS GERAIS*/
+  h2 {
+    text-align: center;
+    font-size: 2em;
+    padding: 60px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  h2::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 2px;
+    background: #0085be;
+    margin: 0 auto;
+  }
+  body {
+    background: #d9d9d9;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  p {
+    line-height: 24px;
+    color: #494949;
+  }
+  
+  /*ESTILOS GERAIS FIM*/
+  
+  /*HEADER*/
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 0;
+    z-index: 10;
+    transition: 2s;
+  }
+  
+  .header a img {
+    border: #0085be 2px solid;
+    border-radius: 10px;
+  }
+  .header_menu {
+    text-align: right;
+  }
+  
+  .header_menu ul li {
+    display: inline-block;
+    margin-left: 25px;
+    margin-top: 5px;
+  }
+  
+  .header_menu ul li a {
+    font-size: 1.225em;
+    color: #f5f5f5;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 0;
+  }
+  
+  .header_menu ul li a:hover {
+    color: #0085be;
+  }
+  
+  .scroll-menu-on {
+    background: #222222;
+    transition: 2s;
+  }
+  .btnmobile {
+    display: none;
+  }
+  
+  /* Menu mobile*/
+  @media (max-width: 739px) {
+    .js .btnmobile {
+      display: flex;
+      background: #222;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #f5f5f5;
+      cursor: pointer;
+      margin: 10px;
+      align-items: center;
+      position: fixed;
+      z-index: 300;
+    }
+    .js .btnmobile.active::before {
+      transform: rotate(90deg);
+    }
+    .js .btnmobile::before {
+      content: "";
+      display: inline-block;
+      height: 2px;
+      width: 12px;
+      margin-right: 4px;
+      background: #fff;
+      box-shadow: 0 4px #fff, 0 -4px #fff;
+      transition: transform 0.3s;
+    }
+    .js #menu {
+      display: none;
+      position: fixed;
+      background: rgba(34, 34, 34, 0.8);
+      text-align: start;
+      width: 200px;
+      z-index: 200;
+      top: 0;
+      padding: 60px 0 20px 0;
+      box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+    }
+    .js #menu.active {
+      display: block;
+      animation: scroll-anime 0.3s forwards;
+    }
+    .scroll-menu-on {
+      background: none;
+      transition: none;
+    }
+    .header_menu {
+      text-align: left;
+    }
+    .header_menu ul li {
+      margin-top: 20px;
+    }
+    .header a img {
+      display: none;
+    }
+  }
+  /*HEADER FIM*/
+  
+  /*INTRODUÇÃO*/
+  
+  #intro {
+    background: url("../img/bgintro.jpg") no-repeat center;
+    text-align: center;
+    background-size: cover;
+    padding: 380px 0;
+  }
+  .sub-intro h1::after {
+    content: "";
+    display: block;
+    width: 160px;
+    height: 2px;
+    background: #0085be;
+    margin: 0 auto;
+  }
+  .sub-intro h1 {
+    color: #f5f5f5;
+    font-size: 5em;
+    margin-bottom: 20px;
+  }
+  .sub-intro span {
+    font-size: 1.725em;
+    color: #f5f5f5;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+  .sub-intro span::after {
+    content: "|";
+    margin-left: 3px;
+    opacity: 1;
+    animation: pisca 0.7s infinite;
+  }
+  @keyframes pisca {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 739px) {
+    #intro {
+      padding: 190px 0;
+    }
+    .sub-intro h1 {
+      font-size: 2.5em;
+    }
+    .sub-intro span {
+      font-size: 1.1em;
+      letter-spacing: normal;
+    }
+  }
+  /*INTRODUÇÃO FIM*/
+  
+  /*SOBRE*/
+  .circulo img {
+    max-width: 70%;
+    border-radius: 50%;
+    border: 2px solid #0085be;
+    margin-bottom: 20px;
+    margin: 0 auto;
+  }
+  .circulo img:hover {
+    border: 2px solid #000;
+  }
+  
+  #sobre {
+    padding-bottom: 60px;
+  }
+  #sobre p {
+    margin-top: 20px;
+  }
+  /*SOBRE FIM*/
+  
+  /*TECNOLOGIA*/
+  
+  .tec img {
+    margin: 0 auto;
+    border: #0085be 2px solid;
+    border-radius: 50%;
+  }
+  .tec img:hover {
+    border: #000 2px solid;
+  }
+  .tec p {
+    font-size: 1em;
+    background: #0085be;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    padding: 5px 0 10px 0;
+    margin: 10px 0;
+  }
+  
+  #tecnologias {
+    padding-bottom: 60px;
+  }
+  
+  /*TECNOLOGIA FIM*/
+  
+  /*PROJETO*/
+  .zoom {
+    overflow: hidden;
+  }
+  .zoom img {
+    max-width: 100%;
+    transition: all 0.3s;
+  }
+  .zoom:hover img {
+    transform: scale(1.2);
+  }
+  
+  #projetos h3 {
+    padding: 60px 0px 40px 0px;
+    font-size: 1.725em;
+  }
+  .btn::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #0085be;
+    margin: 40px auto 0px auto;
+  }
+  .btn {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .btnproject {
+    margin-top: 20px;
+    font-weight: bold;
+    display: inline-block;
+    color: #000;
+    border: #0085be 2px solid;
+    border-radius: 50px;
+    padding: 10px 35px;
+    cursor: pointer;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0);
+  }
+  
+  .btnproject:hover {
+    border: #000 2px solid;
+    transition: 0.3s;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+  }
+  @media (max-width: 739px) {
+    .project p {
+      margin-top: 20px;
+    }
+  }
+  /*PROJETO FIM*/
+  
+  /*CONTATO*/
+  
+  .icon-contato ul li {
+    display: inline-block;
+    margin: 0px 20px 60px 20px;
+  }
+  .icon-contato {
+    text-align: center;
+  }
+  .icon-contato img {
+    max-width: 80px;
+    border: #0085be 2px solid;
+    border-radius: 100px;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0);
+  }
+  .icon-contato img:hover {
+    border: #000 2px solid;
+    box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+  }
+  @media (max-width: 739px) {
+    .contact img {
+      margin: 0 auto;
+      display: inline-block;
+    }
+  
+    .icon-contato ul li {
+      display: inline-block;
+      margin: 0px 5px 60px 5px;
+    }
+  }
+  
+  /*CONTATO FIM*/
+  
+  /*FOOTER*/
+  .footer {
+    background: #0085be;
+    padding: 30px 0px;
+    text-align: center;
+  }
+  .footer p {
+    color: #000;
+  }
+  .footer a:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  /*animação scroll*/
+  .js .scroll-anime {
+    opacity: 0;
+    transform: translate3d(-100px, 0, 0);
+    transition: 1s;
+  }
+  .js .scroll-anime.ativo {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  /*FOOTER FIM*/
+  
